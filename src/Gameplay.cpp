@@ -24,16 +24,15 @@ Scene *Gameplay::evaluateSceneChange() {
 void Gameplay::draw() {
     ClearBackground(GRAY);
 
-    /*
     mapgenerator.drawMap(Game::ScreenWidth, Game::ScreenHeight); //ruft Funkktion auf, die map drawt
     if (IsKeyPressed(KEY_R)) { //wenn man R drückt, mach neue Map
         mapgenerator.generateMap();
-    }*/
+    }
 }
 
 
 Gameplay::Gameplay() {
-    //mapgenerator.generateMap(); //ruft Funktion auf, die Map erstellt
+    mapgenerator.generateMap(); //ruft Funktion auf, die Map erstellt
 
 }
 

@@ -18,7 +18,9 @@ add_executable(${PROJECT_NAME} main.cpp
         Gameplay.cpp
         Gameplay.h
         Gameover.cpp
-        Gameover.h)
+        Gameover.h
+        Map.cpp
+        Map.h)
 
 # Add config.h.in file
 configure_file(config.h.in config.h)
