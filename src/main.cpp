@@ -5,6 +5,9 @@
 
 #include "config.h"
 
+#include "Scene.h"
+#include "StartScreen.h"
+
 int main() {
     // Raylib initialization
     // Project name, screen size, fullscreen mode etc. can be specified in the config.h.in file
@@ -24,6 +27,8 @@ int main() {
     float renderScale{}; // this and the line below are relevant to drawing later.
     Rectangle renderRec{};
 
+    Scene* currentScene = new StartScreen();
+
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
@@ -41,14 +46,17 @@ int main() {
         // ...
         // ...
 
+        //checks which screen is shown and calls the methods needed there
+        currentScene->update();
+        Scene* newScene = currentScene->evaluateSceneChange();
+
         BeginDrawing();
         // You can draw on the screen between BeginDrawing() and EndDrawing()
         // For the letterbox we draw on canvas instad
         BeginTextureMode(canvas);
         { //Within this block is where we draw our app to the canvas and YOUR code goes.
-            ClearBackground(WHITE);
-            DrawText("Hello, world!", 10, 10, 30, LIGHTGRAY);
-            DrawTexture(myTexture, 10, 100, WHITE);
+            ClearBackground(BLACK);
+            currentScene->draw();
         }
         EndTextureMode();
         //The following lines put the canvas in the middle of the window and have the negative as black
@@ -71,6 +79,11 @@ int main() {
             DrawText(TextFormat("Render scale: %.0f", renderScale), 10, 10, 20, LIGHTGRAY);
         }
         EndDrawing();
+
+        if (currentScene != newScene){
+            delete currentScene;
+            currentScene = newScene;
+        }
     } // Main game loop end
 
     // De-initialization here
