@@ -13,6 +13,8 @@ void Gameplay::update() {
 Scene *Gameplay::evaluateSceneChange() {
     if (IsKeyPressed(KEY_M)) {
         return new StartScreen();
+    } else if(IsKeyPressed(KEY_E)){
+        return new Gameover();
     }
     else {
         return this;

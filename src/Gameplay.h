@@ -7,6 +7,7 @@
 
 #include "Scene.h"
 #include "StartScreen.h"
+#include "Gameover.h"
 
 class Gameplay :public Scene{
 public:

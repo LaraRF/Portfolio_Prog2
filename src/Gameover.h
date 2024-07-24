@@ -5,8 +5,20 @@
 #ifndef RAYLIBSTARTER_GAMEOVER_H
 #define RAYLIBSTARTER_GAMEOVER_H
 
+#include "Scene.h"
+#include "StartScreen.h"
+#include "Gameplay.h"
 
-class Gameover {
+class Gameover : public Scene {
+public:
+
+    Gameover();
+
+    void update() override;
+
+    Scene *evaluateSceneChange() override;
+
+    void draw() override;
 
 };
 
