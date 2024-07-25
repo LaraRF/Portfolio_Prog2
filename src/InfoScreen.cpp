@@ -15,7 +15,7 @@ Scene *InfoScreen::evaluateSceneChange() { //gives the buttons their functions
 void InfoScreen::draw() {
 
     DrawText("This is how you play:\n\n Use WASD keys to move. \n\n Use P to pick things up\n and use O to drop things.\n\n Use M to go back to the main menu.", 20,20,20,WHITE);
-
+    DrawText("Notes for Andreas: \nYou can also get a new map by pressing R\nor skip from the map to the\nGame Over Screen by pressing E.", 20,320,20,WHITE);
 }
 
 void InfoScreen::update() {

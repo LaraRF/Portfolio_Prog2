@@ -125,15 +125,19 @@ void map::generateMap() {
         addObstacles();
     } while (!findPathAStar());
 
-    //spawnItems();
+    spawnItems();
 }
 
-/*void map::spawnItems() {
+void map::spawnItems() {
     items.clear();
     for (int i = 0; i < itemcount; ++i) {
         auto [x, y] = findRandomTraversableTile();
 
-        items.push_back(std::make_unique<Sword>(2.5f, "Steel Sword", "A sharp steel Sword", 100, 10));
+        items.push_back(std::make_unique<Sword>(4.5f, "Steel Sword", "A sharp steel Sword", 100, 10));
+        /*items.push_back(std::make_unique<Sword>(4.0f, "Iron Sword", "A sharp iron Sword", 80, 7));
+        items.push_back(std::make_unique<Shield>(4.5f, "Steel Shield", "A steel Shield", 120, 10));
+        items.push_back(std::make_unique<Shield>(3.0f, "Wood Shield", "A wooden Shield", 40, 3));
+        items.push_back(std::make_unique<Ring>(1.0f, "Magic Ring", "A magic Ring", 200, 5));*/
 
         // Store the item's position (you might want to add x and y properties to ItemBase)
         items.back()->x = x;
@@ -153,7 +157,7 @@ std::pair<int, int> map::findRandomTraversableTile() {
 
     std::uniform_int_distribution<> dis(0, traversableTiles.size() - 1);
     return traversableTiles[dis(randomnumbergenerator)];
-}*/
+}
 
 void map::drawMap(int screenWidth, int screenHeight) {
     int mapWidth = mapsize * tilesize;
@@ -191,10 +195,10 @@ void map::drawMap(int screenWidth, int screenHeight) {
         }
     }
 
-    /*
-    for (const auto& sword : items) {
-        int x = sword->x * tilesize + (tilesize / 2);
-        int y = sword->y * tilesize + (tilesize / 2);
-        DrawCircle(x, y, tilesize / 4, BLACK);  // Draw swords as black circles
-    }*/
+    for (const auto& item : items) {
+        int x = item ->x * tilesize + (tilesize / 2);
+        int y = item ->y * tilesize + (tilesize / 2);
+        DrawCircle(x, y, tilesize / 4, BLACK);  // Draw items as black circles
+    }
+
 }

@@ -8,13 +8,13 @@
 #include <vector>
 #include "raylib.h"
 #include "config.h"
-//#include "ItemBase.h"
+#include "ItemBase.h"
 #include <random>
 #include <queue>
 #include <memory>
-//#include "Ring.h"
-//#include "Shield.h"
-//#include "Sword.h"
+#include "Ring.h"
+#include "Shield.h"
+#include "Sword.h"
 
 enum TileType {Traversable, Blocked, Beginning, End, TreasureChest};
 
@@ -53,7 +53,7 @@ public:
 
 private:
     std::vector<std::vector<TileType>> Map;
-    //std::vector<std::unique_ptr<ItemBase>> items;
+    std::vector<std::unique_ptr<ItemBase>> items;
     std::mt19937 randomnumbergenerator;
 
     void initializeMap();

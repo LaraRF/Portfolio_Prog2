@@ -20,7 +20,15 @@ add_executable(${PROJECT_NAME} main.cpp
         Gameover.cpp
         Gameover.h
         Map.cpp
-        Map.h)
+        Map.h
+        ItemBase.cpp
+        ItemBase.h
+        Sword.cpp
+        Sword.h
+        Shield.cpp
+        Shield.h
+        Ring.cpp
+        Ring.h)
 
 # Add config.h.in file
 configure_file(config.h.in config.h)
