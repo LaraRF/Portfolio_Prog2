@@ -28,7 +28,15 @@ add_executable(${PROJECT_NAME} main.cpp
         Shield.cpp
         Shield.h
         Ring.cpp
-        Ring.h)
+        Ring.h
+        Character.cpp
+        Character.h
+        PlayerChar.cpp
+        PlayerChar.h
+        NPC.cpp
+        NPC.h
+        Inventory.cpp
+        Inventory.h)
 
 # Add config.h.in file
 configure_file(config.h.in config.h)
