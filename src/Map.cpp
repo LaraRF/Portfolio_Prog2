@@ -8,6 +8,11 @@
 #include <unordered_set>
 #include <iostream>
 
+int map::startPosX = 0;
+int map::startPosY = 0;
+int map::endPosX = 0;
+int map::endPosY = 0;
+
 map::map() : randomnumbergenerator(std::random_device{}()) {}
 
 void map::initializeMap() {
@@ -19,6 +24,11 @@ void map::placeStartAndEnd() {
     int endX = std::uniform_int_distribution<>(0, mapsize - 1)(randomnumbergenerator);
     Map[mapsize - 1][startX] = TileType::Beginning;
     Map[0][endX] = TileType::End;
+
+    startPosX = startX;
+    startPosY = mapsize - 1;
+    endPosX = endX;
+    endPosY = 0;
 }
 
 void map::addObstacles() {
@@ -46,6 +56,8 @@ bool map::findPathAStar() { //path finding code was written with help of KI (Cla
         if (Map[mapsize - 1][i] == TileType::Beginning) {
             startX = i;
             startY = mapsize - 1;
+            startPosX = startX;
+            startPosY =startY;
         }
         if (Map[0][i] == TileType::End) {
             endX = i;
@@ -202,3 +214,4 @@ void map::drawMap(int screenWidth, int screenHeight) {
     }
 
 }
+

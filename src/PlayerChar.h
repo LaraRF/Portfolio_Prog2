@@ -9,10 +9,14 @@
 #include "Map.h"
 
 class PlayerChar : public Character {
-
+public:
     void draw() override;
     void update() override;
 
+    PlayerChar(int xpos, int ypos);
+
+    int charposx=0;
+    int charposy=0;
 
 };
 

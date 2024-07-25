@@ -5,8 +5,8 @@
 #include "Gameplay.h"
 
 void Gameplay::update() {
-// Create a player at position (0, 0) with base strength 10
-    //PlayerChar player(0, 0, 10);
+
+    theplayer->update();
 
 }
 
@@ -28,11 +28,13 @@ void Gameplay::draw() {
     if (IsKeyPressed(KEY_R)) { //wenn man R drückt, mach neue Map
         mapgenerator.generateMap();
     }
+    theplayer->draw();
 }
 
 
 Gameplay::Gameplay() {
     mapgenerator.generateMap(); //ruft Funktion auf, die Map erstellt
 
+    theplayer = new PlayerChar(map::getStartPosX(), map::getStartPosY());
 }
 

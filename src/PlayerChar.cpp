@@ -7,22 +7,27 @@
 
 void PlayerChar::update() {
 
-    if (IsKeyPressed(KEY_W)) {
-        playerposition.y++;
+
+    if (IsKeyDown(KEY_W)) {
+        charposy--;
     }
-    if (IsKeyPressed(KEY_A)) {
-        playerposition.x--;
+    if (IsKeyDown(KEY_A)) {
+        charposx--;
     }
-    if (IsKeyPressed(KEY_S)) {
-        playerposition.y--;
+    if (IsKeyDown(KEY_S)) {
+        charposy++;
     }
-    if (IsKeyPressed(KEY_D)) {
-        playerposition.x++;
+    if (IsKeyDown(KEY_D)) {
+        charposx++;
     }
 }
 
 
 void PlayerChar::draw() {
 
-    DrawRectangle(playerposition.x, playerposition.y, 16,16,GRAY);
+    DrawRectangle(charposx, charposy, 16,16,GRAY);
+}
+
+PlayerChar::PlayerChar(int xpos, int ypos) {
+
 }

@@ -46,10 +46,11 @@ public:
     const int tilesize=32;
     const int itemcount=5;
 
-    int startX;
-    int startY;
-    int endX;
-    int endY;
+
+    static int getStartPosX() { return startPosX; }
+    static int getStartPosY() { return startPosY; }
+    static int getEndPosX() { return endPosX; }
+    static int getEndPosY() { return endPosY; }
     //items
     //Sword* Sword_1 = new Sword(2.5f, "Steel Sword", "A sharp steel Sword", 100, 10);
     //Ring* Ring_1 = new Ring(0.1f, "Gold Ring", "A shiny gold Ring", 50, 5);
@@ -60,6 +61,16 @@ private:
     std::vector<std::unique_ptr<ItemBase>> items;
     std::mt19937 randomnumbergenerator;
 
+    int startX;
+    int startY;
+    int endX;
+    int endY;
+
+    static int startPosX;
+    static int startPosY;
+    static int endPosX;
+    static int endPosY;
+
     void initializeMap();
     void placeStartAndEnd();
     void addObstacles();
@@ -68,6 +79,8 @@ private:
     int calculateHeuristic(int x1, int y1, int x2, int y2) const;
     void spawnItems();
     std::pair<int, int> findRandomTraversableTile();
+
+
 };
 
 

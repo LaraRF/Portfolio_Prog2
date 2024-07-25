@@ -9,6 +9,7 @@
 #include "StartScreen.h"
 #include "Gameover.h"
 #include "Map.h"
+#include "PlayerChar.h"
 
 class Gameplay :public Scene{
 public:
@@ -21,6 +22,7 @@ public:
     void draw() override;
 
     map mapgenerator; //map = Klasse, mapgenerator = Instanz von Klasse
+    PlayerChar *theplayer;
 };
 
 
