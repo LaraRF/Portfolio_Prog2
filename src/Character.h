@@ -5,9 +5,12 @@
 #ifndef RAYLIBSTARTER_CHARACTER_H
 #define RAYLIBSTARTER_CHARACTER_H
 
+#include "raylib.h"
 
 class Character {
 
+    virtual void draw()=0;
+    virtual void update()=0;
 };
 
 

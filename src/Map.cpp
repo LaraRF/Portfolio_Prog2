@@ -35,13 +35,13 @@ bool map::isValidMove(int x, int y)const {
     return x >= 0 && x < mapsize && y >= 0 && y < mapsize && Map[y][x] != TileType::Blocked;
 }
 
-bool map::findPathAStar() {
+bool map::findPathAStar() { //path finding code was written with help of KI (Claude)
     std::vector<std::vector<Node*>> nodes(mapsize, std::vector<Node*>(mapsize, nullptr));
     std::priority_queue<Node*, std::vector<Node*>, CompareNode> openSet;
     std::unordered_set<Node*> openSetHash;
 
     // Find start and end positions
-    int startX, startY, endX, endY;
+
     for (int i = 0; i < mapsize; ++i) {
         if (Map[mapsize - 1][i] == TileType::Beginning) {
             startX = i;

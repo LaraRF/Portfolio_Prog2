@@ -6,8 +6,13 @@
 #define RAYLIBSTARTER_PLAYERCHAR_H
 
 #include "Character.h"
+#include "Map.h"
 
 class PlayerChar : public Character {
+
+    void draw() override;
+    void update() override;
+
 
 };
 

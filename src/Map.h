@@ -46,6 +46,10 @@ public:
     const int tilesize=32;
     const int itemcount=5;
 
+    int startX;
+    int startY;
+    int endX;
+    int endY;
     //items
     //Sword* Sword_1 = new Sword(2.5f, "Steel Sword", "A sharp steel Sword", 100, 10);
     //Ring* Ring_1 = new Ring(0.1f, "Gold Ring", "A shiny gold Ring", 50, 5);
