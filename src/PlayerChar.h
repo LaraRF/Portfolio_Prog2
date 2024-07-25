@@ -16,7 +16,7 @@ public:
     PlayerChar(int xpos, int ypos);
 
     int charposx=0;
-    int charposy=0;
+    int charposy=32*14+8; //macht Startposition vorerst auf Mitte der untersten Reihe
 
 };
 
